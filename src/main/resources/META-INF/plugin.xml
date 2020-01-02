@@ -1,0 +1,34 @@
+<idea-plugin>
+    <id>com.tum.shaukat.my_gradle_plugin</id>
+    <name>Sample Code Inspection</name>
+    <vendor email="shaharyar93@outlook.com" >Shaukat</vendor>
+
+    <description><![CDATA[
+        Demonstrates implementing a Local Inspection Tool.<br> Adds entries to <b>Preferences | Editor | Inspections | Java | Probable Bugs</b>.
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <localInspection
+                language="JAVA"
+                displayName="SDK: Code Inspection for SwingUtility"
+                groupPath="Java"
+                groupBundle="messages.InspectionsBundle"
+                groupKey="group.names.probable.bugs"
+                enabledByDefault="true"
+                level="WARNING"
+                implementationClass="com.intellij.codeInspection.SampleCodeInspection">
+        </localInspection>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
